@@ -1,7 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import { prisma } from '../lib/prisma'
 import { z } from 'zod'
-import { request } from 'https'
 
 export async function memoriesRoutes(app: FastifyInstance) {
   app.addHook('preHandler', async(request) => {
@@ -40,7 +39,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
     })
 
     if (!memory.isPublic && memory.userId != request.user.sub){
-      return reply.status(401).send
+      return reply.status(401).send()
     }
 
     return memory

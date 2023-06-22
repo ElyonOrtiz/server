@@ -14,10 +14,10 @@ export async function authRoutes(app: FastifyInstance) {
       'https://github.com/login/oauth/access_token',
       null,
       {
-        params: {
-          code,
+        params: {         
           client_id: process.env.GITHUB_CLIENT_ID,
           client_secret: process.env.GITHUB_CLIENT_SECRET,
+          code,
         },
         headers: {
           Accept: 'application/json',
@@ -26,7 +26,7 @@ export async function authRoutes(app: FastifyInstance) {
     )
     const { access_token } = accessTokenResponse.data
 
-    const userResponse = await axios.get('https://api.github.com/users', {
+    const userResponse = await axios.get('https://api.github.com/user', {
       headers: {
         Authorization: `Bearer ${access_token}`
       }
@@ -57,7 +57,7 @@ export async function authRoutes(app: FastifyInstance) {
     }
     const token = app.jwt.sign({
       name: user.name,
-      avartarUrl: user.avatarUrl,
+      avatarUrl: user.avatarUrl,
     }, {
       sub: user.id,
       expiresIn: '30 days',
