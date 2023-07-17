@@ -1,0 +1,64 @@
+Arguments: 
+  /usr/bin/node /usr/local/bin/yarn add @fastify/multpart
+
+PATH: 
+  /home/elyon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@fastify%2fmultpart: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "tsx watch src/server.ts",
+      "lint": "eslint src --ext .ts --fix"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@rocketseat/eslint-config": "^1.2.0",
+      "@types/node": "^20.1.5",
+      "dotenv": "^16.3.1",
+      "eslint": "^8.40.0",
+      "tsx": "^3.12.7",
+      "typescript": "^5.0.4"
+    },
+    "dependencies": {
+      "@fastify/cors": "^8.2.1",
+      "@fastify/jwt": "^6.7.1",
+      "@prisma/client": "^4.14.1",
+      "axios": "^1.4.0",
+      "fastify": "^4.17.0",
+      "zod": "^3.21.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
